@@ -3,11 +3,16 @@
     ViewBag.Title = "Index";
 }
 
-<p>We're going to have a parrty!</p>
-<img src="~/Content/portfolioimg1.jpg" />
+<div class="text-center">
 
-<br/>
-<p> And you are invited .....</p>
+    <p>We're going to have a parrty!</p>
+    
+    <img src="~/Content/portfolioimg1.jpg" />
 
-@Html.ActionLink("RSVP Now","RsvpForm")
+    <br />
+    <p> And you are invited .....</p>
+    <div class="btn btn-success">
 
+        @Html.ActionLink("RSVP Now", "RsvpForm")
+    </div>
+</div>
