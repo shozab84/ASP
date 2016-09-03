@@ -23,11 +23,11 @@
         <asp:Label ID="Label2" runat="server" Text="Please check this checkbox and click the button "></asp:Label>
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Check Box Button" OnClick="Button1_Click" />
+        <asp:Button ID="ButtonCheckBox" runat="server" Text="Check Box Button" OnClick="ButtonCheckBox_Click" />
 
         <br />
         <br />
-        <asp:Label ID="CheckButtonOutput" runat="server" Text=""></asp:Label>
+        <asp:Label ID="CheckBoxLabel" runat="server" Text=""></asp:Label><%--we are giving meaningful name and putting Label as suffix in the ID name.--%>
 
         <br />
         <br />
@@ -56,31 +56,39 @@ Here is a link to another website (but the HTML anchor tag works just as well) <
         <asp:RadioButton ID="RadioButton1" runat="server" />
         <asp:Label ID="Label10" runat="server" Text="Click this radiobutton, then the button below "></asp:Label>
         <br />
-        <asp:Button ID="Button5" runat="server" Text="Radio Button Button" OnClick="Button5_Click" />
+        <asp:Button ID="ButtonRadioButton" runat="server" Text="Radio Button Button" OnClick="ButtonRadioButton_Click" />
+        <%--we are giving meaningful name and putting Button as prefix in the ID--%> 
+
         <br />
         <br />
-        <asp:Label ID="RadioButtonOutput" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="RadioButtonLabel" runat="server" Text=""></asp:Label> 
+        <%--we are giving meaningful name and putting Label as suffix in the ID name.--%>
+       
         <br />
         <br />
         <asp:Label ID="Label5" runat="server" Text="This is a multiline text box - please type something and click the button below:"></asp:Label>
         <br />
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBoxMultiLine" runat="server"></asp:TextBox>
         <br />
-        <asp:Button ID="Button2" runat="server" Text="Text Box Button" OnClick="Button2_Click" />
+        <asp:Button ID="ButtonTextBoxMultiLine" runat="server" Text="Text Box Button" OnClick="ButtonTextBoxMultiLine_Click" />
         <br />
-        <asp:Label ID="TextBoxOutput" runat="server" Text=""></asp:Label>
+        <asp:Label ID="TextBoxMultiLineLabel" runat="server" Text=""></asp:Label>
+
 
         <br />
         <br />
         <asp:Label ID="Label11" runat="server" Text="This is a text box that accepts email addresses - please type an email address and click the button below:"></asp:Label>
         <br />
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox>
         <br />
         <br />
 
-        <asp:Button ID="Button6" runat="server" Text="Button" />
+       <%-- <asp:Button ID="ButtonTextBoxEmail" runat="server" Text="Text Box Button" OnClick="ButtonTextBoxEmail_Click" />--%>
         <br />
+        <asp:Label ID="TextBoxEmailLabel" runat="server" Text=""></asp:Label>
 
+        <br />
+        <br />
 
         <asp:Label ID="Label6" runat="server" Text="Here is a calendar control"></asp:Label>
         <br />
@@ -108,7 +116,7 @@ Here is a link to another website (but the HTML anchor tag works just as well) <
         <br />
         <asp:Label ID="Label8" runat="server" Text="Choose your all the ice-creams that you like from the list (and you can pick more than one):"></asp:Label>
         <br />
-        <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+        <asp:CheckBoxList ID="FavouriteIceCream" runat="server">
             <asp:ListItem>Vanilla</asp:ListItem>
             <asp:ListItem>Chocolate</asp:ListItem>
             <asp:ListItem>Strawberry</asp:ListItem>
@@ -117,7 +125,11 @@ Here is a link to another website (but the HTML anchor tag works just as well) <
 
         <br />
 
-        <asp:Button ID="Button4" runat="server" Text="Confirm ice-cream" />
+        <asp:Button ID="ButtonIceCream" runat="server" Text="Confirm ice-cream" OnClick="ButtonIceCream_Click" />
+        <br />
+        <br />
+        <asp:Label ID="FavouriteIceCreamLabel" runat="server" Text=""></asp:Label>
+       <%-- for displaying the output--%>
 
 
 
