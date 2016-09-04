@@ -92,8 +92,9 @@ Here is a link to another website (but the HTML anchor tag works just as well) <
 
         <asp:Label ID="Label6" runat="server" Text="Here is a calendar control"></asp:Label>
         <br />
-        <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+        <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
         <br />
+        <asp:Label ID="CalendarLabel" runat="server" Text=""></asp:Label>
         <br />
 
         <h5> List Controls</h5>
@@ -103,7 +104,7 @@ Here is a link to another website (but the HTML anchor tag works just as well) <
         <br />
         <br />
 
-        <asp:DropDownList ID="DropDownList1" runat="server">
+        <asp:DropDownList ID="FavouriteLanguage" runat="server">
       
             <asp:ListItem>C#</asp:ListItem>
             <asp:ListItem>VB</asp:ListItem>
@@ -111,12 +112,15 @@ Here is a link to another website (but the HTML anchor tag works just as well) <
 
         <br />
         <br />
-        <asp:Button ID="Button3" runat="server" Text="Confirm Language" />
+        <asp:Button ID="ButtonConfirmLanguage" runat="server" Text="Confirm Language" OnClick="ButtonConfirmLanguage_Click" />
+        <br />
+        <br />
+        <asp:Label ID="FavouriteLanguageLabel" runat="server" Text=""></asp:Label>
         <br />
         <br />
         <asp:Label ID="Label8" runat="server" Text="Choose your all the ice-creams that you like from the list (and you can pick more than one):"></asp:Label>
         <br />
-        <asp:CheckBoxList ID="FavouriteIceCream" runat="server">
+        <asp:CheckBoxList ID="FavouriteIceCream" runat="server" AutoPostBack="True">
             <asp:ListItem>Vanilla</asp:ListItem>
             <asp:ListItem>Chocolate</asp:ListItem>
             <asp:ListItem>Strawberry</asp:ListItem>
@@ -130,11 +134,33 @@ Here is a link to another website (but the HTML anchor tag works just as well) <
         <br />
         <asp:Label ID="FavouriteIceCreamLabel" runat="server" Text=""></asp:Label>
        <%-- for displaying the output--%>
+        <br />
+        Here is a radio button list. Which kind of music do you prefer:
 
+                   <asp:RadioButtonList ID="RadioButtonListMusic" runat="server">
+                    <asp:ListItem Value="Jazz">Jazz</asp:ListItem>
+                    <asp:ListItem Value="Rock">Rock</asp:ListItem>
+                    <asp:ListItem Value="HipHop">Hip Hop</asp:ListItem>
+                    <asp:ListItem Value="Blues">Blues</asp:ListItem>
+                   </asp:RadioButtonList>
 
-
-
-
+        <asp:Button ID="ButtonRadioButtonListMusic" runat="server" Text="Button" OnClick="ButtonRadioButtonListMusic_Click" />
+        <br />
+        <asp:Label ID="RadioButtonListMusicLabel" runat="server" Text=""></asp:Label>
+        <br />
+        
+        From the list box, choose your preferred candidate for Chelsea manager. If you think they should do a jobshare, you can pick more than one:
+        <br />
+        <asp:ListBox ID="ChelseaManagerListBox" runat="server" TabIndex="0" AutoPostBack="True" SelectionMode="Multiple">
+            <asp:ListItem>Pep Guardiola</asp:ListItem>
+            <asp:ListItem>Diego Simeone</asp:ListItem>
+            <asp:ListItem>Antonio Conte</asp:ListItem>
+            <asp:ListItem>John Terry</asp:ListItem>
+        </asp:ListBox>
+        <br />
+        <asp:Button ID="ButtonChelseaManager" runat="server" Text="Choose the next Chelsea manager" OnClick="ButtonChelseaManager_Click" />
+        <br />
+        <asp:Label ID="ChelseaManagerLabel" runat="server" Text=""></asp:Label>
 
 
     
