@@ -4,140 +4,105 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="stylesheet" href="Styles/bootstrap.css" />
+    <script src="Script/canvasjs.min.js"></script>
+    <script src="Script/ChartCreation.js"></script>
+
+    
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
 
-        <h1> Household Budget Calculator</h1>
+        <h1> Household Budget Planner</h1>
         <br />
         
         <h3> Budget Planner puts you in control of your household spending and analyses your results to help you take control of your money.</h3>
         <h3> Enter how much your Family earns and spend on Household, Travel, Food, Entertainment, Family & Friends every month</h3>
         <br />
-        <br />
+        
         
         <h4> Family Income: </h4>
-        <asp:Label ID="salaryLabel" runat="server" Text="Salary (After Tax)"></asp:Label>
-        <asp:TextBox ID="salaryTextBox" runat="server">0.00</asp:TextBox>
-        <br />
-        <asp:Label ID="partnerSalaryLabel" runat="server" Text="Partner's Monthly Income"></asp:Label>
-        <asp:TextBox ID="partnerSalaryTextBox" runat="server">0.00</asp:TextBox>
-        <br />
-        <asp:Label ID="benefitsLabel" runat="server" Text="Benefits"></asp:Label>
-        <asp:TextBox ID="benefitsTextBox" runat="server">0.00</asp:TextBox>
-        <br />
-        <asp:Label ID="otherIncomeLabel" runat="server" Text="Other Income (e.g. maintenance payments)"></asp:Label>
-        <asp:TextBox ID="otherIncomeTextBox" runat="server"></asp:TextBox>
-        <br />
-        <br />
-
-        <h4> HouseHold: </h4>
-
-        <asp:Label ID="electricityLabel" runat="server" Text="Electricity"></asp:Label>
-        <asp:TextBox ID="electricityTextBox" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="gasLabel" runat="server" Text="Gas"></asp:Label>
-        <asp:TextBox ID="gasTextBox" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="waterLabel" runat="server" Text="Water"></asp:Label>
-        <asp:TextBox ID="waterTextBox" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="mobileLabel" runat="server" Text="Mobile Phones"></asp:Label>
-        <asp:TextBox ID="mobileTextBox" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="phoneBroadbandLabel" runat="server" Text="Phone & Broadband "></asp:Label>
-        <asp:TextBox ID="phoneBroadbandTextBox" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="digitaltvLabel" runat="server" Text="Digital TV (e.g SKY/Virgin/TalkTalk/BT) "></asp:Label>
-        <asp:TextBox ID="digitaltvTextBox" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="tvLicenceLabel" runat="server" Text="TV Licence"></asp:Label>
-        <asp:TextBox ID="tvLicenceTextBox" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="homeInsuranceLabel" runat="server" Text="Home Insurance"></asp:Label>
-        <asp:TextBox ID="homeInsuranceTextBox" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="serviceChargeLabel" runat="server" Text="Service Charge & ground rent (living in a Flat)"></asp:Label>
-        <asp:TextBox ID="serviceChargeTextBox" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="groceriesLabel" runat="server" Text="Groceries"></asp:Label>
-        <asp:TextBox ID="groceriesTextBox" runat="server"></asp:TextBox>
-        <br />
-        <br />
-
-        <h4> Travel: </h4>
-        
-        <asp:Label ID="Label14" runat="server" Text="Fuel(Petrol/Diesel)"></asp:Label>
-        <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="Label15" runat="server" Text="Car Insurance (including breakdown cover)"></asp:Label>
-        <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="Label17" runat="server" Text="Road Tax (Car)"></asp:Label>
-        <asp:TextBox ID="TextBox17" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="Label18" runat="server" Text="Car Maintenance (including MOT)"></asp:Label>
-        <asp:TextBox ID="TextBox18" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="Label19" runat="server" Text="Public Transport (Bus/Tube/Tram) "></asp:Label>
-        <asp:TextBox ID="TextBox19" runat="server"></asp:TextBox>
+        <asp:Label ID="IncomeLabel" runat="server" Text="Monthly Income (After Tax)"></asp:Label>
+        <asp:TextBox ID="IncomeTextBox" runat="server">0.00</asp:TextBox>
         <br />
         
-         <h4> Leisure: </h4>
 
-        <asp:Label ID="Label16" runat="server" Text="Eating Out"></asp:Label>
-        <asp:TextBox ID="TextBox16" runat="server"></asp:TextBox>
+        <h4>Essentials</h4>
+        <asp:Label ID="RentOrMortgageLabel" runat="server" Text="Rent or Mortgage"></asp:Label>
+        <asp:TextBox ID="RentOrMortgageTextBox" runat="server"></asp:TextBox>
         <br />
-        <asp:Label ID="Label20" runat="server" Text="Cinema,Books, Music, Games etc "></asp:Label>
-        <asp:TextBox ID="TextBox20" runat="server"></asp:TextBox>
+        <asp:Label ID="FoodAndGroceriesLabel" runat="server" Text="Food and groceries"></asp:Label>
+        <asp:TextBox ID="FoodAndGroceriesTextBox" runat="server"></asp:TextBox>
         <br />
-        <asp:Label ID="Label21" runat="server" Text="Lottery & gambling "></asp:Label>
-        <asp:TextBox ID="TextBox21" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="Label22" runat="server" Text="Sport & gym Membership"></asp:Label>
-        <asp:TextBox ID="TextBox22" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="Label23" runat="server" Text="Days Out"></asp:Label>
-        <asp:TextBox ID="TextBox23" runat="server"></asp:TextBox>
         <br />
 
-         <h4> Debt Payments: </h4>
+        <h4> Bills: </h4>
 
-        <asp:Label ID="Label24" runat="server" Text="Mortgage repayment "></asp:Label>
-        <asp:TextBox ID="TextBox24" runat="server"></asp:TextBox>
+        <asp:Label ID="ElectricityLabel" runat="server" Text="Electricity"></asp:Label>
+        <asp:TextBox ID="ElectricityTextBox" runat="server">0.00</asp:TextBox>
         <br />
-        <asp:Label ID="Label25" runat="server" Text="Student Loan"></asp:Label>
-        <asp:TextBox ID="TextBox25" runat="server"></asp:TextBox>
+        <asp:Label ID="GasLabel" runat="server" Text="Gas"></asp:Label>
+        <asp:TextBox ID="GasTextBox" runat="server">0.00</asp:TextBox>
         <br />
-        <asp:Label ID="Label26" runat="server" Text="Credit Card Payment"></asp:Label>
-        <asp:TextBox ID="TextBox26" runat="server"></asp:TextBox>
+        <asp:Label ID="WaterLabel" runat="server" Text="Water"></asp:Label>
+        <asp:TextBox ID="WaterTextBox" runat="server">0.00</asp:TextBox>
         <br />
-        <asp:Label ID="Label27" runat="server" Text="Car Loan/Lease repayment"></asp:Label>
-        <asp:TextBox ID="TextBox27" runat="server"></asp:TextBox>
+        <asp:Label ID="CouncilTaxLabel" runat="server" Text="Council Tax"></asp:Label>
+        <asp:TextBox ID="CouncilTaxTextBox" runat="server"></asp:TextBox>
         <br />
-        <asp:Label ID="Label28" runat="server" Text="Personal Loan repayment"></asp:Label>
-        <asp:TextBox ID="TextBox28" runat="server"></asp:TextBox>
+        <asp:Label ID="MobileLabel" runat="server" Text="Mobile Phones"></asp:Label>
+        <asp:TextBox ID="MobileTextBox" runat="server">0.00</asp:TextBox>
         <br />
+        <asp:Label ID="PhoneBroadbandLabel" runat="server" Text="Phone & Broadband "></asp:Label>
+        <asp:TextBox ID="PhoneBroadbandTextBox" runat="server">0.00</asp:TextBox>
+        <br />
+        <asp:Label ID="DigitaltvLabel" runat="server" Text="Digital TV (e.g SKY/Virgin/TalkTalk/BT) "></asp:Label>
+        <asp:TextBox ID="DigitaltvTextBox" runat="server">0.00</asp:TextBox>
+        <br />
+        <asp:Label ID="TvLicenceLabel" runat="server" Text="TV Licence"></asp:Label>
+        <asp:TextBox ID="TvLicenceTextBox" runat="server">0.00</asp:TextBox>
+        <br />
+        <asp:Label ID="HomeInsuranceLabel" runat="server" Text="Home Insurance"></asp:Label>
+        <asp:TextBox ID="HomeInsuranceTextBox" runat="server">0.00</asp:TextBox>
+        <br />
+        <asp:Label ID="ServiceChargeLabel" runat="server" Text="Service Charge & ground rent (living in a Flat)"></asp:Label>
+        <asp:TextBox ID="ServiceChargeTextBox" runat="server">0.00</asp:TextBox>
+        <br />
+        <br />
+        
 
-         <h4> Family: </h4>
-        <asp:Label ID="Label30" runat="server" Text="School fees "></asp:Label>
-        <asp:TextBox ID="TextBox30" runat="server"></asp:TextBox>
+        <h4> Transport: </h4>
+        
+        <asp:Label ID="FuelLabel" runat="server" Text="Fuel"></asp:Label>
+        <asp:TextBox ID="FuelTextBox" runat="server"></asp:TextBox>
         <br />
-        <asp:Label ID="Label31" runat="server" Text="Vet bills"></asp:Label>
-        <asp:TextBox ID="TextBox31" runat="server"></asp:TextBox>
+        <asp:Label ID="CarInsuranceLabel" runat="server" Text="Car Insurance"></asp:Label>
+        <asp:TextBox ID="CarInsuranceTextBox" runat="server"></asp:TextBox>
         <br />
-        <asp:Label ID="Label32" runat="server" Text="Pet insurance"></asp:Label>
-        <asp:TextBox ID="TextBox32" runat="server"></asp:TextBox>
+        <asp:Label ID="RoadTaxMOTLabel" runat="server" Text="Road Tax and MOT"></asp:Label>
+        <asp:TextBox ID="RoadTaxMOTTextBox" runat="server"></asp:TextBox>
         <br />
+        <asp:Label ID="CarMaintenanceLabel" runat="server" Text="Car Maintenance"></asp:Label>
+        <asp:TextBox ID="CarMaintenanceTextBox" runat="server"></asp:TextBox>
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Calculate" OnClick="Button1_Click" />
+        <asp:Label ID="ParkingLabel" runat="server" Text="Parking"></asp:Label>
+        <asp:TextBox ID="ParkingTextBox" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="PublicTransportLabel" runat="server" Text="Public Transport"></asp:Label>
+        <asp:TextBox ID="PublicTransportTextBox" runat="server"></asp:TextBox>
+        <br />
+        
+        <h4>Family & Kids</h4>
 
+        <asp:Label ID="ChildCareLabel" runat="server" Text="Childcare"></asp:Label>
+        <asp:TextBox ID="ChildCareTextBox" runat="server"></asp:TextBox>
         <br />
-        <br /> 
-        <asp:Label ID="totalIncomeOutput" runat="server" Text=""></asp:Label>
         <br />
+        
+        <asp:Button ID="CalculateButton" runat="server" Text="Calculate" />
+        
 
     </div>
     </form>
