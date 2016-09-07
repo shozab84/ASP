@@ -37,12 +37,22 @@ public partial class _Default : System.Web.UI.Page
             return 0;
 
     }
+    //private double getUserData(string txtBoxValue)// we have created a function getUserData that reads whatever user enters in a text boxes 
+    //{
+    //    if (!string.IsNullOrWhiteSpace(txtBoxValue))
+    //    {
+    //        return double.Parse(txtBoxValue);
+    //    }
+    //    else
+    //        return 0;
 
+        //}
 
     private void CalculateExpenses()// this is our function to calculate expenses
     {
-        double bills, Essentials,transport,kids;
-        String chartType = "pie";
+        double bills, essentials,transport,kids,totalExp;
+        string chartType = "pie";
+        //Type Expenses = GetType();
 
         Income = getUserData(IncomeTextBox);// passing value or parameter, here i have passed id of Income text box
         RentOrMortgage = getUserData(RentOrMortgageTextBox);
@@ -65,11 +75,16 @@ public partial class _Default : System.Web.UI.Page
         PublicTransport = getUserData(PublicTransportTextBox);
         ChildCare = getUserData(ChildCareTextBox);
 
-        Essentials = RentOrMortgage + FoodAndGroceries;
+        essentials = RentOrMortgage + FoodAndGroceries;
         bills = Electricity + Gas + Water + CouncilTax + Mobile + PhoneBroadband + Digitaltv + 
                 TvLicence + HomeInsurance + ServiceCharge;
         transport = Fuel + CarInsurance + RoadTaxMOT + CarMaintenance + Parking + PublicTransport;
         kids = ChildCare;
+        totalExp = essentials + bills + transport + kids;
+
+       ClientScript.RegisterStartupScript(this.GetType(), "draw1", "drawExp('" + chartType + "','" + essentials + "','" + bills + "','" + transport + "','" + kids + "','" + totalExp + "');", true);
+
+
 
 
 

@@ -1,15 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <link rel="stylesheet" href="Styles/bootstrap.css" />
-    <script src="Script/canvasjs.min.js"></script>
-    <script src="Script/ChartCreation.js"></script>
-
+  
+   
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.1.0.js"></script>
+    <link href="Content/StyleSheet.css" rel="stylesheet" />
+    <link href="Content/StyleChart.css" rel="stylesheet" />
     
-    <title></title>
+    <title>Household budget Calculator</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -25,7 +28,7 @@
         
         <h4> Family Income: </h4>
         <asp:Label ID="IncomeLabel" runat="server" Text="Monthly Income (After Tax)"></asp:Label>
-        <asp:TextBox ID="IncomeTextBox" runat="server">0.00</asp:TextBox>
+        <asp:TextBox ID="IncomeTextBox" runat="server"></asp:TextBox>
         <br />
         
 
@@ -94,7 +97,7 @@
         <asp:TextBox ID="PublicTransportTextBox" runat="server"></asp:TextBox>
         <br />
         
-        <h4>Family & Kids</h4>
+        <h4>Family and Kids</h4>
 
         <asp:Label ID="ChildCareLabel" runat="server" Text="Childcare"></asp:Label>
         <asp:TextBox ID="ChildCareTextBox" runat="server"></asp:TextBox>
@@ -103,8 +106,16 @@
         
         <asp:Button ID="CalculateButton" runat="server" Text="Calculate" />
         
-
-    </div>
-    </form>
+         <div class="col-md-7">
+                    
+                    <div id="chartContainerExp" style="height: 300px; width: 100%">
+                        <div id="chartPlaceholderExp"></div>
+                        <div id="noDataPlaceholderExp" class="h1"></div>
+                    </div>
+                </div>
+           
+    <script src="Scripts/canvasjs.min.js"></script>
+    <script src="Scripts/ChartCreation.js"></script>     
+    
 </body>
 </html>
