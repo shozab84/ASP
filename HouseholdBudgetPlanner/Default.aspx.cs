@@ -15,17 +15,19 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
 
     }
 
-    protected void CalculateButton_Click(object sender, EventArgs e)
+
+    protected void CalculateButton_Click1(object sender, EventArgs e)
     {
+        //CalculateExpenses();// calling CalculateExpenses function/method when user clicks Calculate button
 
-        CalculateExpenses();// calling CalculateExpenses function/method when user clicks Calculate button
-
+        ClientScript.RegisterStartupScript(GetType(), "testing", "tesingChart();", true);
     }
 
+    
 
     private double getUserData(TextBox txtBoxValue)// we have created a function getUserData that reads whatever user enters in a text boxes 
     {
@@ -34,25 +36,16 @@ public partial class _Default : System.Web.UI.Page
             return double.Parse(txtBoxValue.Text);
         }
         else
+        { 
             return 0;
-
+        }
     }
-    //private double getUserData(string txtBoxValue)// we have created a function getUserData that reads whatever user enters in a text boxes 
-    //{
-    //    if (!string.IsNullOrWhiteSpace(txtBoxValue))
-    //    {
-    //        return double.Parse(txtBoxValue);
-    //    }
-    //    else
-    //        return 0;
-
-        //}
 
     private void CalculateExpenses()// this is our function to calculate expenses
     {
-        double bills, essentials,transport,kids,totalExp;
+        double bills, essentials, transport, kids, totalExp;
         string chartType = "pie";
-        //Type Expenses = GetType();
+        Type Expenses = GetType();
 
         Income = getUserData(IncomeTextBox);// passing value or parameter, here i have passed id of Income text box
         RentOrMortgage = getUserData(RentOrMortgageTextBox);
@@ -76,13 +69,16 @@ public partial class _Default : System.Web.UI.Page
         ChildCare = getUserData(ChildCareTextBox);
 
         essentials = RentOrMortgage + FoodAndGroceries;
-        bills = Electricity + Gas + Water + CouncilTax + Mobile + PhoneBroadband + Digitaltv + 
+        bills = Electricity + Gas + Water + CouncilTax + Mobile + PhoneBroadband + Digitaltv +
                 TvLicence + HomeInsurance + ServiceCharge;
         transport = Fuel + CarInsurance + RoadTaxMOT + CarMaintenance + Parking + PublicTransport;
         kids = ChildCare;
         totalExp = essentials + bills + transport + kids;
 
-       ClientScript.RegisterStartupScript(this.GetType(), "draw1", "drawExp('" + chartType + "','" + essentials + "','" + bills + "','" + transport + "','" + kids + "','" + totalExp + "');", true);
+        Label1.Text = essentials + "," + bills + "," + transport + "," + kids;
+
+
+        ClientScript.RegisterStartupScript(this.GetType(), "draw1", "drawExp('" + chartType + "','" + essentials + "','" + bills + "','" + transport + "','" + kids + "','" + totalExp + "');", true);
 
 
 
@@ -94,5 +90,6 @@ public partial class _Default : System.Web.UI.Page
 
 
 
-
+    
 }
+

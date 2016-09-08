@@ -7,16 +7,17 @@
   
    
     <link href="Content/bootstrap.css" rel="stylesheet" />
-    <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/jquery-3.1.0.js"></script>
+   
+    <script src="Script/jquery-3.1.0.js"></script>
     <link href="Content/StyleSheet.css" rel="stylesheet" />
     <link href="Content/StyleChart.css" rel="stylesheet" />
-    
+    <script src="Script/ChartCreation.js"></script>
+
     <title>Household budget Calculator</title>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div></div>
 
         <h1> Household Budget Planner</h1>
         <br />
@@ -104,8 +105,8 @@
         <br />
         <br />
         
-        <asp:Button ID="CalculateButton" runat="server" Text="Calculate" />
-        
+        <asp:Button ID="CalculateButton" runat="server" Text="Calculate" OnClick="CalculateButton_Click1" />
+       
          <div class="col-md-7">
                     
                     <div id="chartContainerExp" style="height: 300px; width: 100%">
@@ -113,9 +114,13 @@
                         <div id="noDataPlaceholderExp" class="h1"></div>
                     </div>
                 </div>
+
+        <br />
+
+        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+        <div id="test"></div>
            
-    <script src="Scripts/canvasjs.min.js"></script>
-    <script src="Scripts/ChartCreation.js"></script>     
-    
+   
+  </form>  
 </body>
 </html>
