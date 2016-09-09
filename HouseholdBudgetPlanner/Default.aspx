@@ -7,7 +7,6 @@
   
    
     <link href="Content/bootstrap.css" rel="stylesheet" />
-   
     <script src="Script/jquery-3.1.0.js"></script>
     <link href="Content/StyleSheet.css" rel="stylesheet" />
     <link href="Content/StyleChart.css" rel="stylesheet" />
@@ -16,22 +15,42 @@
     <title>Household budget Calculator</title>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div></div>
+    
+    
+         <div class ="container heading">
+           <div class="model text-center">
+             <h1> Household Budget Planner</h1>
+             <h3> Budget Planner puts you in control of your household spending and analyses your results to help you take control of your money.
+                  Enter how much your Family earns and spend on Household, Travel, Food, Entertainment, Family and Friends every month.
+             </h3>
+           </div>
+         </div>    
+   
+        <hr class="top"/>
+        <form id="form2" runat="server" class="form-horizontal">   
+            <div class="container content">
+            <br />
+             <div class="row">             
+                      <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert-danger" HeaderText="Enter only digits in the following fields:" BorderStyle="Solid" BorderWidth="2px" BorderColor="Red" />
+                      <h4> Family Income: </h4>
+                      <br />
+                         <div class ="col-md-6">
+                            <div class ="row">
+                                <div class ="col-md-4 col-md-offset-1">
+                                    <asp:Label ID="IncomeLabel" runat="server" Text="Monthly Income (After Tax)"></asp:Label>
+                                </div>
+                                <div class ="col-md-6">
+                                    <asp:TextBox ID="IncomeTextBox" runat="server" Text="IncomeTextBox"></asp:TextBox>
+                                    <asp:CompareValidator ID="IncomeCV" runat="server" ErrorMessage="Income" CssClass="text-danger" Type="Currency" Operator="DataTypeCheck" ControlToValidate="IncomeTextBox"></asp:CompareValidator>
+                                </div>
 
-        <h1> Household Budget Planner</h1>
-        <br />
-        
-        <h3> Budget Planner puts you in control of your household spending and analyses your results to help you take control of your money.</h3>
-        <h3> Enter how much your Family earns and spend on Household, Travel, Food, Entertainment, Family & Friends every month</h3>
-        <br />
-        
-        
-        <h4> Family Income: </h4>
-        <asp:Label ID="IncomeLabel" runat="server" Text="Monthly Income (After Tax)"></asp:Label>
-        <asp:TextBox ID="IncomeTextBox" runat="server"></asp:TextBox>
-        <br />
-        
+                           </div>
+                         
+                         </div>
+                           
+                         <br />   
+               
+
 
         <h4>Essentials</h4>
         <asp:Label ID="RentOrMortgageLabel" runat="server" Text="Rent or Mortgage"></asp:Label>
